@@ -1,2 +1,6 @@
-require "archit.options"
-require "archit.keymaps"
+require "user.options"
+require "user.keymaps"
+require "user.plugins"
+require "user.colorscheme"
+require "user.bufferline"
+require "user.which-key"

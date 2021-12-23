@@ -26,9 +26,7 @@ local options = {
   sidescrolloff = 5,
 }
 
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+require("user.utils").map_set(vim.opt, options)
 
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append {
