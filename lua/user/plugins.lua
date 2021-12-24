@@ -11,7 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "https://github.com/wbthomason/packer.nvim",
     install_path,
   }
-  print "Installing packer close and reopen Neovim..."
+  vim.notify "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -23,17 +23,13 @@ vim.cmd [[
   augroup end
 ]]
 
-local ok, packer = pcall(require, "packer")
-if not ok then
-  vim.notify("'packer' not found")
-  return
-end
+local packer = require "packer"
 
 -- open packer in a floating window
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require "packer.util".float { border = "solid" }
     end,
   },
 }
@@ -47,7 +43,38 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
   use "kyazdani42/nvim-web-devicons"
 
-  use "folke/which-key.nvim"
+  -- lsp
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
+
+  -- cmp
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-cmdline"
+  use "saadparwaiz1/cmp_luasnip"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "onsails/lspkind-nvim"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
+
+  -- treesitter
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  use "numToStr/Comment.nvim"
+
   use "LunarVim/onedarker.nvim"
   use "akinsho/bufferline.nvim"
+
+  use "folke/which-key.nvim"
+
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
 end)

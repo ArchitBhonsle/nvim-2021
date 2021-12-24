@@ -1,8 +1,8 @@
-local k = require("user.utils").keymap
-local tk = require("user.utils").terminal_keymap
+local k = require "user.utils" .keymap
+local tk = require "user.utils" .terminal_keymap
 
 -- setting the leader
-k("", "<SPACE>", "<NOP>")
+k("", "<space>", "<nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -17,10 +17,10 @@ tk("t", "<C-k>", "<C-\\><C-N><C-w>k")
 tk("t", "<C-l>", "<C-\\><C-N><C-w>l")
 
 -- easy resizing
-k("n", "<C-UP>", ":resize -2<CR>")
-k("n", "<C-DOWN>", ":resize +2<CR>")
-k("n", "<C-LEFT>", ":vertical resize -2<CR>")
-k("n", "<C-RIGHT>", ":vertical resize +2<CR>")
+k("n", "<C-up>", ":resize -2<CR>")
+k("n", "<C-down>", ":resize +2<CR>")
+k("n", "<C-left>", ":vertical resize -2<CR>")
+k("n", "<C-right>", ":vertical resize +2<CR>")
 
 -- move text
 k("n", "<A-f>", ":move .+1<CR>==")
@@ -31,5 +31,5 @@ k("v", "<A-f>", ":move '>+1<CR>gv=gv")
 k("v", "<A-d>", ":move '<-2<CR>gv=gv")
 
 -- stay in visual mode after indenting
-k("v", "<", "<gv")
 k("v", ">", ">gv")
+k("v", "<", "<gv")

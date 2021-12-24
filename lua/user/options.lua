@@ -24,6 +24,7 @@ local options = {
   wrap = false,
   scrolloff = 10,
   sidescrolloff = 5,
+  guifont = "JetBrainsMono Nerd Font:h22",
 }
 
 require("user.utils").map_set(vim.opt, options)
@@ -39,5 +40,4 @@ vim.opt.whichwrap:append {
 }
 vim.opt.iskeyword:remove "-"
 
-vim.opt.guifont = "JetBrainsMono:h22"
 vim.g.neovide_remember_window_size = true
