@@ -27,3 +27,11 @@ comment.setup {
     })
   end,
 }
+
+require "which-key".register({
+  ["/"] = { "toggle line comment" },
+  ["?"] = { "toggle block comment" },
+}, {
+  prefix = "<leader>",
+  nowait = true,
+})

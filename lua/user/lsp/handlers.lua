@@ -40,26 +40,27 @@ local function lsp_keymaps(bufnr)
 
   local which_key = require "which-key"
   which_key.register({
-    name = "lsp & diagnostics",
-
-    -- lsp
-    d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "jump to definition"},
-    D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "jump to declaration" },
-    i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "list all the implementations" },
-    u = { "<cmd>lua vim.lsp.buf.references()<cr>", "list all the references" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename all references" },
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "run a code action" },
-    s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "show signature information" },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "format the current buffer" },
-
-    -- diagnostics
-    l = { "<cmd>lua vim.diagnostic.open_float()<cr>", "show diagnostics" },
-    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "add buffer diagnostics in location list" },
-    n = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "move to previous diagnostic" },
-    p = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "move to next diagnostic" },
+    l = {
+      name = "lsp",
+      d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "definition"},
+      D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
+      I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementations to quickfix list" },
+      U = { "<cmd>lua vim.lsp.buf.references()<cr>", "references to quickfix list" },
+      r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
+      -- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "run a code action" },
+      s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "signature information" },
+      f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "format current buffer" },
+    },
+    d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "show diagnostics" },
+    D = {
+      name = "diagnostics",
+      d = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "buffer diagnostics to location list" },
+      n = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "previous diagnostic" },
+      p = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
+    }
   }, {
     buffer = bufnr,
-    prefix = "<leader>l",
+    prefix = "<leader>",
     nowait = true,
   })
 

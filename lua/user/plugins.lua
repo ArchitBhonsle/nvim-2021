@@ -67,6 +67,9 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+  -- telescope
+  use "nvim-telescope/telescope.nvim"
+
   use "numToStr/Comment.nvim"
 
   use "LunarVim/onedarker.nvim"
@@ -75,6 +78,6 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   if PACKER_BOOTSTRAP then
-    require("packer").sync()
+    require "packer".sync()
   end
 end)

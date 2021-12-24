@@ -8,6 +8,8 @@ require "user.cmp"
 
 require "user.treesitter"
 
+require "user.telescope"
+
 require "user.comment"
 require "user.bufferline"
 
