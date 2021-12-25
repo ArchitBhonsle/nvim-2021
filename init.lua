@@ -10,6 +10,9 @@ require "user.treesitter"
 
 require "user.telescope"
 
+require "user.hop"
+require "user.harpoon"
+
 require "user.comment"
 require "user.bufferline"
 
