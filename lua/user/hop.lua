@@ -8,7 +8,7 @@ require "which-key".register ({
     name = '"hop"oon',
     w = { "<cmd>:HopWord<cr>", '"hop" to any word'},
     d = { "<cmd>:HopChar2<cr>", '"hop" to a diagraph'},
-    p = { "<cmd>:HopPattern<cr>", '"hop to a pattern"'},
+    p = { "<cmd>:HopPattern<cr>", '"hop" to a pattern'},
   }
 }, {
   prefix = "<leader>",

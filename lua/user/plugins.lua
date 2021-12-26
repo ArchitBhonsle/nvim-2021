@@ -56,6 +56,12 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "onsails/lspkind-nvim"
 
+  -- language specific
+  use "simrat39/rust-tools.nvim"
+
+  -- debugging
+  -- use 'mfussenegger/nvim-dap'
+
   -- snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
@@ -71,6 +77,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-fzy-native.nvim"
   use "nvim-telescope/telescope-symbols.nvim"
+  use "nvim-telescope/telescope-ui-select.nvim"
 
   -- jump!
   use "phaazon/hop.nvim"

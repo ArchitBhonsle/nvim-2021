@@ -5,6 +5,7 @@ require "user.colorscheme"
 
 require "user.lsp"
 require "user.cmp"
+require "user.langs"
 
 require "user.treesitter"
 

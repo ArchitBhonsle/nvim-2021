@@ -1,13 +1,20 @@
 local telescope = require "telescope"
 local t_builtin = require "telescope.builtin"
+local t_themes = require "telescope.themes"
 
 telescope.setup {
   defaults = {
     path_display = "smart",
+  },
+  extensions = {
+    ["ui-select"] = {
+      t_themes.get_dropdown {}
+    }
   }
 }
 
-telescope.load_extension('fzy_native') -- overrides the file & generic sorter
+telescope.load_extension "fzy_native" -- overrides the file & generic sorter
+telescope.load_extension "ui-select"
 
 require "which-key".register({
   b = {
