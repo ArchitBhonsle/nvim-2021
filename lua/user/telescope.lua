@@ -2,9 +2,33 @@ local telescope = require "telescope"
 local t_builtin = require "telescope.builtin"
 local t_themes = require "telescope.themes"
 
+local b = require "user.utils".border
+local big_panel = {
+  winblend = 15,
+  borderchars = {
+    prompt = { b.h, b.v, b.h, b.v, b.ml, b.mr, b.br, b.bl },
+    results = { b.h, " ", b.h, b.v, b.tl, b.h, b.br, b.bl },
+    preview = { b.h, b.v, b.h, b.v, b.tm, b.tr, b.mr, b.bl },
+  },
+  results_title = false,
+  preview_title = false,
+  layout_strategy = "bottom_pane",
+  layout_config = {
+    height = 0.8,
+    prompt_position = "bottom",
+  }
+}
+local small_panel = vim.deepcopy(big_panel)
+small_panel.layout_config.height = 0.4
+
 telescope.setup {
   defaults = {
-    path_display = "smart",
+    path_display = {
+      shorten = 2
+   },
+  },
+  picker = {
+    symbols = { layout_strategy = "cursor" },
   },
   extensions = {
     ["ui-select"] = {
@@ -26,11 +50,11 @@ require "which-key".register({
   },
   G = {
     name = "git",
-    b = { function() t_builtin.branches {} end, "branches" },
-    c = { function() t_builtin.commits {} end, "commits" },
-    C = { function() t_builtin.buffer_commits {} end, "buffer commits" },
+    b = { function() t_builtin.git_branches(small_panel) end, "branches" },
+    c = { function() t_builtin.git_commits(small_panel) end, "commits" },
+    C = { function() t_builtin.git_bcommits(big_panel) end, "buffer commits" },
   },
-  f = { function() t_builtin.find_files {} end, "find files" },
+  f = { function() t_builtin.find_files(big_panel) end, "find files" },
   F = {
     name = 'more "find"s',
     ['"'] = { function() t_builtin.registers {} end, "registers" },

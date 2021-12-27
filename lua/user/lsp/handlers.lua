@@ -54,7 +54,7 @@ local function lsp_keymaps(bufnr)
     d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "show diagnostics" },
     D = {
       name = "diagnostics",
-      d = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "buffer diagnostics to location list" },
+      D = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "buffer diagnostics to location list" },
       n = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "previous diagnostic" },
       p = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
     }

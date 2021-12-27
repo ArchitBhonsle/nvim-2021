@@ -14,4 +14,18 @@ M.map_set = function(to, from)
     end
   end
 
+M.border = {
+  v = "│",
+  h = "─",
+  m = "┼",
+  tl = "┌",
+  tr = "┐",
+  bl = "└",
+  br = "┘",
+  ml = "├",
+  mr = "┤",
+  tm = "┬",
+  bm = "┴",
+}
+
 return M
