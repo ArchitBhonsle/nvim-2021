@@ -1,5 +1,5 @@
-local k = require "user.utils" .keymap
-local tk = require "user.utils" .terminal_keymap
+local k = require("user.utils").keymap
+local tk = require("user.utils").terminal_keymap
 
 -- setting the leader
 k("", "<space>", "<nop>")

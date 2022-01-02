@@ -1,20 +1,22 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
+require("user.options")
+require("user.keymaps")
+require("user.autocommands")
 
-require "user.lsp"
-require "user.cmp"
-require "user.langs"
+require("user.plugins")
 
-require "user.treesitter"
+require("user.colorscheme")
 
-require "user.telescope"
+require("user.lsp")
+require("user.cmp")
+require("user.langs")
 
-require "user.hop"
-require "user.harpoon"
+require("user.treesitter")
 
-require "user.comment"
-require "user.bufferline"
+require("user.telescope")
 
-require "user.whichkey"
+require("user.hop")
+require("user.comment")
+require("user.autopairs")
+require("user.bufferline")
+
+require("user.whichkey")

@@ -1,1 +1,1 @@
-local _ = require "which-key"
+local _ = require("which-key")
