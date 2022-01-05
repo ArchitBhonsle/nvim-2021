@@ -37,12 +37,15 @@ end
 
 local function lsp_document_formatting(client)
 	if client.resolved_capabilities.document_formatting then
-		vim.api.nvim_exec([[
+		vim.api.nvim_exec(
+			[[
         augroup lsp_document_formatting
           autocmd! * <buffer>
           autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
         augroup END
-      ]])
+      ]],
+			false
+		)
 	end
 end
 

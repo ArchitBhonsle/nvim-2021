@@ -18,5 +18,7 @@ require("user.hop")
 require("user.comment")
 require("user.autopairs")
 require("user.bufferline")
+require("user.toggleterm")
+require("user.sessions")
 
 require("user.whichkey")

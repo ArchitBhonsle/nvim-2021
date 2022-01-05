@@ -34,7 +34,6 @@ packer.init({
 	},
 })
 
--- Install your plugins here
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- packer manages itself
 
@@ -61,8 +60,17 @@ return packer.startup(function(use)
 
 	-- language specific
 	use("simrat39/rust-tools.nvim")
+	use("davidgranstrom/nvim-markdown-preview")
 
-	-- debugging
+	-- lsp related plugins
+	use({
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup() -- customize
+		end,
+	})
+
+	-- debugging TODO
 	-- use 'mfussenegger/nvim-dap'
 
 	-- snippets
@@ -82,11 +90,28 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
 
+	-- programming helpers
 	use("phaazon/hop.nvim")
 	use("numToStr/Comment.nvim")
 	use("windwp/nvim-autopairs")
+	use({
+		"folke/todo-comments.nvim",
+		config = function()
+			require("todo-comments").setup() -- TODO customize
+		end,
+	})
+	use("akinsho/toggleterm.nvim")
+	use("rmagatti/auto-session")
+	use("rmagatti/session-lens")
 
+	-- appearance
 	use("LunarVim/onedarker.nvim")
+	use({
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("lualine").setup({ options = { theme = "onedarker" } }) -- TODO customize
+		end,
+	})
 	use("akinsho/bufferline.nvim")
 
 	use("folke/which-key.nvim")

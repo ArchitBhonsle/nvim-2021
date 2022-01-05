@@ -40,5 +40,9 @@ vim.opt.whichwrap:append({
 	["]"] = true,
 })
 vim.opt.iskeyword:remove("-")
+vim.opt.sessionoptions:append({
+	winpos = true,
+	terminal = true,
+})
 
 vim.g.neovide_remember_window_size = true
